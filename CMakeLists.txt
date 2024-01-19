@@ -16,7 +16,5 @@ else()
     target_compile_options(hw-006 PUBLIC -Wall -Wextra -Werror -pedantic)
 endif()
 
-
-
 set_target_properties(hw-006    PROPERTIES  CXX_STANDARD 17
                                             CXX_STANDARD_REQUIRED ON)
