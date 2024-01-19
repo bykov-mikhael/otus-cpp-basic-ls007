@@ -1,12 +1,22 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(hw-005)
+project(hw-006  VERSION 1.0
+                DESCRIPTION "homework-006"
+                LANGUAGES CXX)
 
-set(SOURCES src/main.cpp)
+set(SOURCES     src/main.cpp)
 
-set(LIB     src/lib/IStatistics.h)
+set(LIBRARY     src/lib/IStatistics.h)
 
-add_executable(hw-005   ${SOURCES})
+add_executable(hw-006   ${SOURCES})
 
-set_target_properties(hw-005 PROPERTIES     CXX_STANDARD 17
+if (MSVC)
+    target_compile_options(hw-006 PUBLIC /W4 /WX)
+else()
+    target_compile_options(hw-006 PUBLIC -Wall -Wextra -Werror -pedantic)
+endif()
+
+
+
+set_target_properties(hw-006    PROPERTIES  CXX_STANDARD 17
                                             CXX_STANDARD_REQUIRED ON)
