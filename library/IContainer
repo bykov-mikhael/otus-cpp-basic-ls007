@@ -1,0 +1,11 @@
+class IContainer {
+public:
+    IContainer();
+    virtual ~IContainer();
+    
+    virtual int push_back();
+    virtual int insert();
+    virtual int erase();
+    virtual int size();
+    virtual IContainer operator[](const IContainer& container) const;
+};

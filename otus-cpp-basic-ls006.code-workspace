@@ -4,5 +4,9 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"C_Cpp.inlayHints.referenceOperator.enabled": true,
+		"C_Cpp.inlayHints.referenceOperator.showSpace": true,
+		"C_Cpp.inlayHints.parameterNames.enabled": true
+	}
 }

@@ -1,0 +1,7 @@
+#pragma once
+
+#include "IContainer"
+
+class CPtrContainer : IContainer {
+
+};
