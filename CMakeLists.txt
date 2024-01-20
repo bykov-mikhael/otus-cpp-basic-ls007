@@ -11,9 +11,13 @@ set(LIBRARY     src/lib/IStatistics.h)
 add_executable(hw-006   ${SOURCES})
 
 if (MSVC)
-    target_compile_options(hw-006 PUBLIC /W4 /WX)
+    target_compile_options(hw-006 PUBLIC    /W4
+                                            /WX)
 else()
-    target_compile_options(hw-006 PUBLIC -Wall -Wextra -Werror -pedantic)
+    target_compile_options(hw-006 PUBLIC    -Wall
+                                            -Wextra
+                                            -Werror
+                                            -pedantic)
 endif()
 
 set_target_properties(hw-006    PROPERTIES  CXX_STANDARD 17
