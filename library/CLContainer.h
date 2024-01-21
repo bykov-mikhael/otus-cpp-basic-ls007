@@ -7,7 +7,7 @@
 template<typename  T>
 class CLContainer : IContainer<T> {
 public:
-    CLContainer(size_t size) : m_size(size) {};
+    explicit CLContainer(size_t size);
     ~CLContainer();
 
     int push_back(T &item) override;
