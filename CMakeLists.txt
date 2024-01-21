@@ -6,9 +6,12 @@ project(hw-006  VERSION 1.0
 
 set(SOURCES     src/main.cpp)
 
-set(LIBRARY     src/lib/IStatistics.h)
+set(LIBRARY     library/IContainer.h
+                library/CLContainer.cpp
+                library/CLContainer.h)
 
-add_executable(hw-006   ${SOURCES})
+add_executable(hw-006   ${SOURCES}
+                        ${LIBRARY})
 
 if (MSVC)
     target_compile_options(hw-006 PUBLIC    /W4
