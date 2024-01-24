@@ -5,14 +5,14 @@
 #include <cstddef>
 
 template<typename  T>
-class CLContainer : IContainer<T> {
+class CListContainer : IContainer<T> {
 public:
-    explicit CLContainer(size_t size);
-    ~CLContainer();
+    explicit CListContainer(size_t size);
+    ~CListContainer();
 
     int push_back(T &item) override;
     int insert(T &item, int NodeID) override;
-    int erase(T &item, int NodeID) override;
+    int erase(int NodeID) override;
     int size() const override;
     IContainer<T> operator[](int NodeID) const override;
 private:

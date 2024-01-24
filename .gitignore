@@ -1,8 +1,8 @@
-#clang cache
-*.cache
-
-#Build directory
+#clang
+*.cache*
+*.clang-format
+#cmake (gcc)
 *build*
-
-#Visual Studio Code directory
+#vscode
 *vscode*
+*workspace*
