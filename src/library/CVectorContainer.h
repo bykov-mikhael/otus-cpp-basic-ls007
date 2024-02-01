@@ -3,17 +3,17 @@
 #include <cstddef>
 #include <string>
 
-#include "container.h"
+#include "IContainer.h"
 
 template<typename T>
-class Akavector final : public Container<T> {
+class CVectorContainer final : public Container<T> {
 public:
-  Akavector();
-  Akavector(const Akavector &other);
-  Akavector(Akavector &&other);
-  Akavector &operator=(const Akavector &other);
-  Akavector &operator=(Akavector &&other);
-  ~Akavector();
+  CVectorContainer();
+  CVectorContainer(const CVectorContainer &other);
+  CVectorContainer(CVectorContainer &&other);
+  CVectorContainer &operator=(const CVectorContainer &other);
+  CVectorContainer &operator=(CVectorContainer &&other);
+  ~CVectorContainer();
 
   void push_back(const T &value) override;
   void insert(int pos, const T &value) override;
@@ -28,4 +28,4 @@ private:
   void check_capacity();
 };
 
-#include "akavector.cpp"
+#include "CVectorContainer.cpp"
