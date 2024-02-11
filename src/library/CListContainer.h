@@ -17,7 +17,7 @@ public:
   void erase(int pos) override;
   int get_size() const override;
   T operator[](int pos) override;
-  // std::string print() override;
+  void print() const override;
 
 private:
   T *m_values;

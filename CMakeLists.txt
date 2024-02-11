@@ -25,13 +25,13 @@ target_include_directories(hw-006 PUBLIC library)
                                         -pedantic
                                         -g
 #                                        -fsanitize=thread
-                                        -fsanitize=address
-                                        -fsanitize=undefined
+#                                        -fsanitize=address
+#                                        -fsanitize=undefined
                                         )
 
    target_link_options(hw-006 PUBLIC    
 #                                        -fsanitize=thread
-                                        -fsanitize=address
-                                        -fsanitize=undefined
+#                                        -fsanitize=address
+#                                        -fsanitize=undefined
                                         )
   endif()

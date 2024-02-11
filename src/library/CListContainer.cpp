@@ -1,5 +1,6 @@
 #include <cstddef>
 #include <iostream>
+#include <sstream>
 
 /**
  * @brief конструктор
@@ -94,17 +95,14 @@ T CListContainer<T>::operator[](int pos) {
 /**
  * @brief печать массива
 */
-// template <typename T>
-// std::string CListContainer<T>::print() {
-  
-//   std::cout << "size_t: " << m_size << std::endl;
-  
-//   for (size_t i = 0; i < m_size; i++) {
-//     std::cout << "pos: " << i << " val " << m_values[i] << std::endl;
-//   }
+template <typename T>
+void CListContainer<T>::print() const {
 
-//   return {};
-// }
+  for (size_t i = 0; i < m_size; i++) {
+    std::cout << "pos: "  << i << " value: " << m_values[i] << std::endl;;
+  }
+
+}
 
 /**
  * @brief проверка массива
