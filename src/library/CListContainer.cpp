@@ -50,11 +50,13 @@ void CListContainer<T>::insert(int pos, const T &value) {
   if ((pos < 0) || (pos >= static_cast<int>(m_size))) {
     exit(0);
   } else {
-    m_values[pos] = value;
-    for (size_t i = pos + 1; i < m_size; i++) {
+    for (int i = static_cast<int>(m_size); i >= pos; i--) {
       m_values[i + 1] = m_values[i];
     }
+    m_values[pos] = value;
+    m_size++;
   }
+  
 }
 
 /**
@@ -62,13 +64,14 @@ void CListContainer<T>::insert(int pos, const T &value) {
 */
 template <typename T>
 void CListContainer<T>::erase(int pos) {
-  if ((pos < 0) || (pos >= static_cast<int>(m_size))) {
+  if ((pos < 0) || (pos > static_cast<int>(m_size))) {
     exit(0);
   } else {
-    for (size_t i = pos; i < m_size; i++) {
+    for (int i = pos; i < static_cast<int>(m_size); i++) {
       m_values[i] = m_values[i + 1];
     }
   }
+  m_size--;
 }
 
 /**
@@ -85,7 +88,7 @@ int CListContainer<T>::get_size() const {
 */
 template <typename T>
 T CListContainer<T>::operator[](int pos) {
-    if ((pos < 0) || (pos >= static_cast<int>(m_size))) {
+    if ((pos < 0) || (pos > static_cast<int>(m_size))) {
       exit(0);
     } else {
       return m_values[pos];
@@ -101,7 +104,6 @@ void CListContainer<T>::print() const {
   for (size_t i = 0; i < m_size; i++) {
     std::cout << "pos: "  << i << " value: " << m_values[i] << std::endl;;
   }
-
 }
 
 /**
