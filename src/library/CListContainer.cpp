@@ -22,10 +22,10 @@ CListContainer<T>::CListContainer(size_t size) : m_size(size) {
 /**
  * @brief деструктор
 */
-// template <typename T>
-// CListContainer<T>::~CListContainer() {
-//   std::cout << "dtor ~CListContainer()" <<std::endl;
-// }
+template <typename T>
+CListContainer<T>::~CListContainer() {
+  delete[] m_values;
+}
 
 /**
  * @brief добавить в конец массива

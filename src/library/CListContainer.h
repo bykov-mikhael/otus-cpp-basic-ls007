@@ -6,11 +6,11 @@
 #include "IContainer.h"
 
 template<typename T>
-class CListContainer : public Container<T> {
+class CListContainer final : public Container<T> {
 public:
   CListContainer();
   explicit CListContainer(size_t size);
-  // ~CListContainer();
+  ~CListContainer();
 
   void push_back(const T &value) override;
   void insert(int pos, const T &value) override;

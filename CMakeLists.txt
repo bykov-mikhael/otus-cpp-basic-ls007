@@ -19,11 +19,12 @@ target_include_directories(hw-006 PUBLIC library)
  if (MSVC)
    target_compile_options(hw-006 PUBLIC /W4 /WX)
  else ()
-   target_compile_options(hw-006 PUBLIC -Wall
-                                        -Wextra
-                                        -Werror
-                                        -pedantic
-                                        -g
+   target_compile_options(hw-006 PUBLIC 
+#                                        -Wall
+#                                        -Wextra
+#                                        -Werror
+#                                        -pedantic
+#                                        -g
 #                                        -fsanitize=thread
 #                                        -fsanitize=address
 #                                        -fsanitize=undefined

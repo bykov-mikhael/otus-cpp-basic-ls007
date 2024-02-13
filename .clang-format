@@ -1,4 +1,7 @@
-BasedOnStyle: LLVM
+BasedOnStyle: Google
+
+AlignAfterOpenBracket:  BAS_Align
+
 IndentWidth: 4
 PointerAlignment: Left
 AllowShortFunctionsOnASingleLine: Empty
