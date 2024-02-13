@@ -29,7 +29,7 @@
 #include <cstddef>
 
 template<typename T>
-void test(Container<T> &container);
+void test(T &container);
 
 int main() {
 
@@ -37,15 +37,8 @@ int main() {
   
   // * 1. создание объекта контейнера для хранения объектов типа int
   std::cout << "1. создание объекта контейнера для хранения объектов типа int: " << std::endl;
-  CListContainer<int> lContainer;
+  CListContainer<int> container;
   
-  test(&lContainer);
-
-  return 0;
-}
-
-template<typename T>
-void test(Container<T> &container) {
   // Размер масива данных
   size_t st_size = 10;
 
@@ -103,4 +96,11 @@ void test(Container<T> &container) {
   // 12. вывод содержимого контейнера на экран ожидаемый результат: 10, 0, 1, 3, 20, 5, 7, 8, 9, 30
   std::cout << "12. вывод содержимого контейнера на экран ожидаемый результат: 10, 0, 1, 3, 20, 5, 7, 8, 9, 30: " << std::endl;
   container.print();
+
+  return 0;
+}
+
+template<typename T>
+void test(Container<T> &container) {
+  
 }

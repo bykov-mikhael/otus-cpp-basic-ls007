@@ -3,7 +3,6 @@
 #include <cstddef>
 #include <string>
 
-
 #include "IContainer.h"
 
 template<typename T>
@@ -12,23 +11,21 @@ public:
   CVectorContainer();
   ~CVectorContainer();
 
-  // void push_back(const T &value) override;
-  // void insert(int pos, const T &value) override;
-  // void erase(int pos) override;
-  // size_t size() override;
-  // T operator[](int index) override;
-  // std::string print() override;
+  void push_back(const T &value) override;
+  void insert(int pos, const T &value) override;
+  void erase(int pos) override;
+  size_t size() override;
+  T operator[](int index) override;
+  void print() override;
 private:
-  size_t m_size;
-  
-  struct m_Node {
-    m_Node(T value) : m_value(value),
-                      m_next(nullptr) {};
-    m_Node *m_next;
-    T m_value;
+  struct Node {
+    T data;
+    Node *next;
+    Node(T d) : data(d), next(nullptr) {
+    }
   };
-  m_Node *m_head;
-  void check_capacity();
+  Node *head;
+  size_t m_size;
 };
 
 #include "CVectorContainer.cpp"
