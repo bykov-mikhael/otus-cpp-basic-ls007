@@ -78,7 +78,7 @@ void CListContainer<T>::erase(int pos) {
  * @brief размер контейнера
 */
 template <typename T>
-int CListContainer<T>::get_size() const {
+size_t CListContainer<T>::get_size() const {
   
   return static_cast<int>(m_size);
 }
@@ -102,8 +102,10 @@ template <typename T>
 void CListContainer<T>::print() const {
 
   for (size_t i = 0; i < m_size; i++) {
-    std::cout << "pos: "  << i << " value: " << m_values[i] << std::endl;;
+    std::cout << m_values[i] << " ";
   }
+
+  std::cout << std::endl;
 }
 
 /**

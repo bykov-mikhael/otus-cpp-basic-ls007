@@ -15,7 +15,7 @@ public:
   void push_back(const T &value) override;
   void insert(int pos, const T &value) override;
   void erase(int pos) override;
-  int get_size() const override;
+  size_t get_size() const override;
   T operator[](int pos) override;
   void print() const override;
 

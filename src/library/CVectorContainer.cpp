@@ -75,7 +75,7 @@ void CVectorContainer<T>::erase(int pos) {
 }
 
 template<typename T>
-size_t CVectorContainer<T>::size() {
+size_t CVectorContainer<T>::get_size() const {
   return m_size;
 }
 
@@ -92,6 +92,11 @@ T CVectorContainer<T>::operator[](int index) {
 }
 
 template<typename T>
-void CVectorContainer<T>::print() {
-  ;
+void CVectorContainer<T>::print() const {
+  Node *temp = head;
+  while (temp != nullptr) {
+    std::cout << temp->data << " ";
+    temp = temp->next;
+  }
+  std::cout << std::endl;
 }
