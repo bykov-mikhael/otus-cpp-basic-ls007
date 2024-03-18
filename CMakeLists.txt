@@ -4,8 +4,6 @@ project(hw-007  VERSION 1.0
                 DESCRIPTION "homework-007"
                 LANGUAGES CXX)
 
-enable_testing()
-
 set(src src/main.cpp)
 
 set(lib src/library/CListContainer.cpp
@@ -46,3 +44,5 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 add_subdirectory(gtests)
+
+enable_testing()
