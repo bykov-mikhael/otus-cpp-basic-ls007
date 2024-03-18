@@ -1,38 +1,48 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.20)
 
-project(hw-006  VERSION 1.0
-                DESCRIPTION "homework-006"
+project(hw-007  VERSION 1.0
+                DESCRIPTION "homework-007"
                 LANGUAGES CXX)
 
+enable_testing()
 
-add_executable(hw-006  src/main.cpp)
+set(src src/main.cpp)
 
-target_compile_features(hw-006 PUBLIC cxx_std_17)
+set(lib src/library/CListContainer.cpp
+        src/library/CVectorContainer.cpp)
+
+set(tests gtests/test.cpp)
+
+add_executable(hw-007  ${src})
+
+target_compile_features(hw-007 PUBLIC cxx_std_17)
                 
-set_target_properties(hw-006  PROPERTIES
+set_target_properties(hw-007  PROPERTIES
                               CXX_STANDARD_REQUIRED ON
                               RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin
 )
+              
+# Warnings:
+# Many (-Wall)
+# Extra (-Wextra)
+# Pedantic (-Wpedantic)
 
-target_include_directories(hw-006 PUBLIC library)
-                
- if (MSVC)
-   target_compile_options(hw-006 PUBLIC /W4 /WX)
- else ()
-   target_compile_options(hw-006 PUBLIC 
-#                                        -Wall
-#                                        -Wextra
-#                                        -Werror
-#                                        -pedantic
-#                                        -g
-#                                        -fsanitize=thread
-#                                        -fsanitize=address
-#                                        -fsanitize=undefined
-                                        )
+# Optimization level:
+# None (-O0)
+# Moderate (-O1)
+# Full (-O2)
+# Maximum (-O3)
+# Maximum & smallest (-Oz)
 
-   target_link_options(hw-006 PUBLIC    
-#                                        -fsanitize=thread
-#                                        -fsanitize=address
-#                                        -fsanitize=undefined
-                                        )
-  endif()
+# Build type:
+# None (CMAKE_C_FLAGS or CMAKE_CXX_FLAGS used)
+# Debug (CMAKE_C_FLAGS_DEBUG or CMAKE_CXX_FLAGS_DEBUG)
+# Release (CMAKE_C_FLAGS_RELEASE or CMAKE_CXX_FLAGS_RELEASE)
+# RelWithDebInfo (CMAKE_C_FLAGS_RELWITHDEBINFO or CMAKE_CXX_FLAGS_RELWITHDEBINFO, means "Release with debug info")
+# MinSizeRel (CMAKE_C_FLAGS_MINSIZEREL or CMAKE_CXX_FLAGS_MINSIZEREL, stands for "Minimum size Release")
+
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -pedantic")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
+add_subdirectory(gtests)
