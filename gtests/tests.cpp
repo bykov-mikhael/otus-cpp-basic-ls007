@@ -3,13 +3,20 @@
 #include "src/library/CListContainer.h"
 #include "src/library/CVectorContainer.h"
 
-TEST(Test001, Expect_true) {
-    EXPECT_TRUE(10.2f);
+TEST(Test001, Assert_eq) {
+    ASSERT_EQ(1, 2);
+    std::cout << "ASSERT_EQ(1, 2)" << std::endl;
+}
+
+TEST(Test001, Expect_eq) {
+    EXPECT_EQ(1, 2);
+    std::cout << "EXPECT_EQ(1, 2)" << std::endl;
 }
 
 TEST(CListContainer, DefaultConstructor) {
     CListContainer<int> l;
     CVectorContainer<int> v;
-    EXPECT_EQ(10u, l.get_size()) << "EXPECT_EQ(0u, l.get_size())";
-    EXPECT_EQ(20u, v.get_size()) << "EXPECT_EQ(0u, v.get_size())";
+    std::cout << v.get_size() << std::endl;
+    std::cout << l.get_size() << std::endl;
+    EXPECT_EQ(v.get_size(), l.get_size()) << "EXPECT_EQ(0u, l.get_size())";
 }

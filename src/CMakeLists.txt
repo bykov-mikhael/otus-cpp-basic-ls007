@@ -1,13 +1,8 @@
-message("Настройка минимальной версии cmake")
 cmake_minimum_required(VERSION 3.20)
 
-message("Настройка параметров проекта")
-project(hw-007  VERSION 1.0 DESCRIPTION "homework-007" LANGUAGES CXX)
-
-message("Настройка минимальной версии cmake")
-#add_subdirectory(src)
-
-add_subdirectory(gtests)
+project(hw-007  VERSION 1.0
+                DESCRIPTION "homework-007"
+                LANGUAGES CXX)
 
 set(src src/main.cpp)
 
@@ -48,6 +43,6 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -pedantic")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-
+add_subdirectory(gtests)
 
 enable_testing()
