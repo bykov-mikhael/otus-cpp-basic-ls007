@@ -30,13 +30,11 @@ int main() {
 
   std::cout << "hw-007" << std::endl;
 
-  std::list<int> lst;
+  std::list<int> lst {1,2,3,4,5,6,7,8,9};
 
-  lst.push_front(1);
-
-  int last = lst.back();
-
-  std::cout << last << std::endl;
+  for (auto it_lst = lst.begin(); it_lst != lst.end(); it_lst++) {
+    std::cout << &it_lst << std::endl;
+  }
 
   return 0;
 }
