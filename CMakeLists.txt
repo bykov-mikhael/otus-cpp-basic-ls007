@@ -4,15 +4,9 @@ cmake_minimum_required(VERSION 3.20)
 message("Настройка параметров проекта")
 project(hw-007  VERSION 1.0 DESCRIPTION "homework-007" LANGUAGES CXX)
 
-message("Настройка минимальной версии cmake")
-#add_subdirectory(src)
-
 add_subdirectory(gtests)
 
 set(src src/main.cpp)
-
-set(lib src/library/CListContainer.cpp
-        src/library/CVectorContainer.cpp)
 
 set(tests gtests/test.cpp)
 
@@ -47,7 +41,5 @@ set_target_properties(hw-007  PROPERTIES
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -pedantic")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-
-
 
 enable_testing()
